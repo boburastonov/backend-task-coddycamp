@@ -74,7 +74,7 @@ const server = http.createServer((req, res) => {
         totalRequests,
         studentsCount: students.length,
         lastRequestTime,
-      })
+      }),
     );
   } else {
     res.writeHead(404, {
