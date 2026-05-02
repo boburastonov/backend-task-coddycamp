@@ -1,0 +1,17 @@
+{
+    "name": "work-with-telegraf",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon bot.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "module",
+    "dependencies": {
+        "dotenv": "^17.4.2",
+        "telegraf": "^4.16.3"
+    }
+}
