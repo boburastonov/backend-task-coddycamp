@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f3ecdf;
+  --bg-accent: rgba(219, 123, 76, 0.18);
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-strong: rgba(255, 255, 255, 0.92);
+  --border: rgba(102, 60, 25, 0.12);
+  --text: #1d1b19;
+  --muted: #61584d;
+  --primary: #c85b31;
+  --primary-strong: #9c3d1a;
+  --danger: #b93836;
+  --success: #1f7a57;
+}
+
+.dark {
+  --bg: #151316;
+  --bg-accent: rgba(115, 154, 255, 0.16);
+  --surface: rgba(29, 26, 32, 0.75);
+  --surface-strong: rgba(34, 31, 38, 0.94);
+  --border: rgba(255, 255, 255, 0.1);
+  --text: #f6f2ea;
+  --muted: #b5aa9f;
+  --primary: #82c7ff;
+  --primary-strong: #c2e6ff;
+  --danger: #ff8f8f;
+  --success: #76d7aa;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "DM Sans", "Segoe UI", sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(circle at top left, var(--bg-accent), transparent 32%),
+      radial-gradient(circle at top right, rgba(55, 114, 255, 0.12), transparent 28%),
+      linear-gradient(160deg, var(--bg), #f7f1e8 46%, #efe6d9 100%);
+    transition: background 180ms ease, color 180ms ease;
+  }
+
+  .dark body {
+    background:
+      radial-gradient(circle at top left, var(--bg-accent), transparent 32%),
+      radial-gradient(circle at bottom right, rgba(255, 162, 82, 0.12), transparent 28%),
+      linear-gradient(160deg, var(--bg), #1b1920 48%, #0f1014 100%);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    letter-spacing: -0.03em;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1.5rem;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 18px 50px rgba(15, 15, 15, 0.08);
+  }
+
+  .panel-strong {
+    background: var(--surface-strong);
+    border: 1px solid var(--border);
+    border-radius: 1.5rem;
+    box-shadow: 0 18px 50px rgba(15, 15, 15, 0.1);
+  }
+
+  .field {
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.45);
+    color: var(--text);
+    padding: 0.85rem 1rem;
+    outline: none;
+    transition: border-color 160ms ease, transform 160ms ease;
+  }
+
+  .dark .field {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .field:focus {
+    border-color: var(--primary);
+    transform: translateY(-1px);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 0.8rem 1.2rem;
+    font-weight: 700;
+    transition: transform 160ms ease, opacity 160ms ease, border-color 160ms ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: #111;
+  }
+
+  .btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  .btn-danger {
+    background: rgba(185, 56, 54, 0.12);
+    color: var(--danger);
+    border: 1px solid rgba(185, 56, 54, 0.15);
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.75rem;
+    font-size: 0.84rem;
+    color: var(--muted);
+  }
+
+  .stat-card {
+    border-radius: 1.35rem;
+    padding: 1rem;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.28), transparent);
+    border: 1px solid var(--border);
+  }
+}
