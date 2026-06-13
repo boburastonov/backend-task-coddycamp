@@ -1,0 +1,12 @@
+[
+  {
+    "label": "Backend dev",
+    "command": "npm run dev --workspace backend",
+    "cwd": "$ZED_WORKTREE_ROOT"
+  },
+  {
+    "label": "Frontend dev",
+    "command": "npm run dev --workspace frontend",
+    "cwd": "$ZED_WORKTREE_ROOT"
+  }
+]
